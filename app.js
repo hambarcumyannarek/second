@@ -6,7 +6,10 @@ const pool = createPool({
     host: process.env.HOST,
     database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
-    user: process.env.USER
+    user: process.env.USER,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 })
 
 app.get('/', async (req, res) => {

@@ -1,5 +1,5 @@
 const express = require('express');
-const { createPool } = require('mysql2/promise');
+const { createPool } = require('mysql2');
 const app = express();
 
 const pool = createPool({
@@ -13,7 +13,7 @@ const pool = createPool({
 })
 
 app.get('/', async (req, res) => {
-    const name = await pool.query('select * from users');
+    const name = await pool.promise().query('select * from users');
     res.send('hello Narek- ' + name[0][0].lastname);
 })
 

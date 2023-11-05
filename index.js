@@ -1,11 +1,11 @@
 const express = require('express');
-const pool = require('./DB/database');
+// const pool = require('./DB/database');
 const app = express();
 
 
 app.get('/', async (req, res) => {
-    const name = await pool.query('select * from users');
-    res.send('hello Narek- ' + name[0][0].lastname);
+    // const name = await pool.query('select * from users'); + name[0][0].lastname
+    res.send('hello Narek- ');
 })
 
 app.listen(3001, () => {

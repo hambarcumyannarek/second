@@ -2,9 +2,9 @@
   "name": "porcd2",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon --require dotenv/config app.js"
+    "dev": "nodemon --require dotenv/config index.js"
   },
   "keywords": [],
   "author": "",

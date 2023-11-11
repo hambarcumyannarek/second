@@ -1,19 +1,18 @@
 const express = require('express');
-// const pool = require('./DB/database');
 const app = express();
-// const { createPool } = require('mysql2/promise');
+const { createPool } = require('mysql2/promise');
 
-// const pool = createPool({
-//     host: 'localhost',
-//     database: 'domanPorc',
-//     password: 'narek878',
-//     user: 'root'
-// })
+const pool = createPool({
+    host: 'localhost',
+    database: 'domanPorc',
+    password: 'narek878',
+    user: 'root'
+})
 
 
 app.get('/', async (req, res) => {
-    // const name = await pool.query('select * from users');
-    res.send('hello Narek- ');
+    const name = await pool.query('select * from users');
+    res.send('hello Narek- '+ name[0][0].lastname);
 })
 
 app.listen(3002, () => {

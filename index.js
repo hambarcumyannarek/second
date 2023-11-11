@@ -12,8 +12,8 @@ const app = express();
 
 
 app.get('/', async (req, res) => {
-    const name = await pool.query('select * from users');
-    res.send('hello Narek- ' + name[0][0].lastname);
+    // const name = await pool.query('select * from users');
+    res.send('hello Narek- ');
 })
 
 app.listen(3002, () => {
